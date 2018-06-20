@@ -7,7 +7,7 @@ $(document).ready(function(){
         $("#display-images").empty();
         var input = $(this).attr("data-name");
         var limit = 10;
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limit + "&api_70iBTcVBH680dyEHrvTM3MY3b8oeRHzH";   
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + input + "&limit=" + limit + "Api Key: 70iBTcVBH680dyEHrvTM3MY3b8oeRHzH";   
 
         $.ajax({
             url: queryURL, 
@@ -19,13 +19,7 @@ $(document).ready(function(){
                 var displayDiv = $("<div>");
                 displayDiv.addClass("holder");
             
-                var image = $("<img>");
-                image.attr("src", response.data[j].images.original_still.url);
-                image.attr("data-still", response.data[j].images.original_still.url);
-                image.attr("data-animate", response.data[j].images.original.url);
-                image.attr("data-state", "still");
-                image.attr("class", "gif");
-                displayDiv.append(image);
+               
 
                 var rating = response.data[j].rating;
                 console.log(response);
